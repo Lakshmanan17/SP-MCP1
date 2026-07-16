@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "node",
+      "args": ["./playwright-mcp/index.js"],
+      "description": "Playwright testing MCP server for test automation and analysis"
+    }
+  },
+  "tools": {
+    "run_test": {
+      "enabled": true,
+      "description": "Run Playwright tests via Maven"
+    },
+    "generate_test": {
+      "enabled": true,
+      "description": "Generate new Playwright tests with AI assistance"
+    },
+    "analyze_failure": {
+      "enabled": true,
+      "description": "Analyze and debug test failures"
+    },
+    "get_test_report": {
+      "enabled": true,
+      "description": "Retrieve test reports and metrics"
+    }
+  },
+  "settings": {
+    "testTimeout": 60000,
+    "screenshotOnFailure": true,
+    "generateAllureReport": true
+  }
+}
+
