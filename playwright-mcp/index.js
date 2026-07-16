@@ -9,7 +9,7 @@
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { CallToolRequestSchema, ListToolsRequestSchema, TextContent } from "@modelcontextprotocol/sdk/types.js";
+import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
 // Initialize MCP Server
 const server = new Server(
@@ -117,7 +117,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return {
         content: [
           {
-            type: "text" as const,
+            type: "text",
             text: `Running test: ${toolArgs.testName}\n\nExecute: mvn test -Dtest=${toolArgs.testName}`,
           },
         ],
@@ -127,7 +127,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return {
         content: [
           {
-            type: "text" as const,
+            type: "text",
             text: `Generating test: ${toolArgs.testName}\nScenario: ${toolArgs.scenario}`,
           },
         ],
@@ -137,7 +137,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return {
         content: [
           {
-            type: "text" as const,
+            type: "text",
             text: `Analyzing failure for: ${toolArgs.testName}`,
           },
         ],
@@ -147,7 +147,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return {
         content: [
           {
-            type: "text" as const,
+            type: "text",
             text: `Retrieving test report in ${toolArgs.format || "json"} format`,
           },
         ],
